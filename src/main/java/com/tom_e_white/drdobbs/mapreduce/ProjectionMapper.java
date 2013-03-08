@@ -11,7 +11,8 @@ public class ProjectionMapper extends Mapper<LongWritable, Text, Text, LongWrita
   private LongWritable count = new LongWritable();
 
   @Override
-  protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+  protected void map(LongWritable key, Text value, Context context)
+      throws IOException, InterruptedException {
     // value is tab separated values: word, year, occurrences, #books, #pages
     // we project out (word, occurrences) so we can sum over all years
     String[] split = value.toString().split("\t+");
