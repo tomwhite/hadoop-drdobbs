@@ -15,7 +15,7 @@ public class AggregateJob extends Configured implements Tool {
 
   @Override
   public int run(String[] args) throws Exception {
-    Job job = new Job();
+    Job job = new Job(getConf());
     job.setJarByClass(getClass());
     job.setJobName(getClass().getSimpleName());
 
